@@ -17,4 +17,15 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/home', 'HomeController@index');
+    Route::resource('category', CategoriesController::class);
+    Route::resource('comment', CommentsController::class);
+    Route::resource('image', ImagesController::class);
+    Route::resource('page', PagesController::class);
+    Route::resource('post', PostsController::class);
+    Route::resource('tag', TagsController::class);
+    Route::resource('user', UsersController::class);
+});
+
+
