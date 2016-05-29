@@ -156,6 +156,14 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         *  Third Party Providers
+         */
+
+        Intervention\Image\ImageServiceProvider::class,
+        Zizaco\Entrust\EntrustServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
     ],
 
     /*
@@ -201,6 +209,16 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /*
+         *  Third Party Aliases
+         */
+
+        'Image' => Intervention\Image\Facades\Image::class,
+        'role' => \Zizaco\Entrust\Middleware\EntrustRole::class,
+        'permission' => \Zizaco\Entrust\Middleware\EntrustPermission::class,
+        'ability' => \Zizaco\Entrust\Middleware\EntrustAbility::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
